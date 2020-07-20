@@ -18,5 +18,46 @@ public class Main {
             System.out.print("\n");
         }
         System.out.print("---------");
+
+        check4Impossible(str);
+        checkWins(lines);
+    }
+
+
+    public static void checkWins(String[] line)
+    {
+        boolean Xwin = false;
+        boolean Owin = false;
+
+        // gorizontal bo'yicha
+        for (int i = 0; i < 3; i++) {
+            if (line[i].equals("XXX") || line[i].equals("OOO")) {
+                if (line[i].equals("OOO")){
+                    Owin = true;
+                }
+                if (line[i].equals("XXX")){
+                    Xwin = true;
+                }
+            }
+        }
+
+        //Vertikal bo'yicha
+        for (int i = 0; i < 2; i++) {
+            //TODO
+        }
+
+    }
+
+    public static void check4Impossible(String line) {
+        int x = 0, o = 0;
+        for (int i = 0; i < line.length(); i++) {
+            if (line.charAt(i) == 'X') {
+                x++;
+            }
+            if (line.charAt(i) == 'O') {
+                o++;
+            }
+        }
+        if (Math.abs(x - o) > 1) System.out.println("Impossible");
     }
 }

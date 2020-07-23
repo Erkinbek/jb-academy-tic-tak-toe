@@ -3,6 +3,7 @@ package tictactoe;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
@@ -17,38 +18,78 @@ public class Main {
             System.out.print(" |");
             System.out.print("\n");
         }
-        System.out.print("---------");
+        System.out.println("---------");
 
-        check4Impossible(str);
-        checkWins(lines);
+        checkWins(lines, str);
     }
 
 
-    public static void checkWins(String[] line)
+    public static void checkWins(String[] line, String str)
     {
         boolean Xwin = false;
         boolean Owin = false;
+        boolean impossible = false;
+
+        Xwin = checkDioganal('X', line);
+        Owin = checkDioganal('O', line);
+
+        Xwin = checkHorizontal('X', line, Xwin);
+        Owin = checkHorizontal('O', line, Owin);
 
         // gorizontal bo'yicha
         for (int i = 0; i < 3; i++) {
-            if (line[i].equals("XXX") || line[i].equals("OOO")) {
-                if (line[i].equals("OOO")){
-                    Owin = true;
-                }
-                if (line[i].equals("XXX")){
-                    Xwin = true;
-                }
+            if (line[i].equals("OOO")){
+                Owin = true;
+            }
+            if (line[i].equals("XXX")){
+                Xwin = true;
             }
         }
 
-        //Vertikal bo'yicha
-        for (int i = 0; i < 2; i++) {
-            //TODO
+        if (!check4Impossible(str, Xwin, Owin))
+            System.out.println("Impossible");
+        else  {
+            if (Xwin) {
+                System.out.println("X wins");
+            }
+            if (Owin) {
+                System.out.println("O wins");
+            }
+            Draw(Xwin, Owin, str);
         }
 
     }
 
-    public static void check4Impossible(String line) {
+    public static void Draw(boolean xWin, boolean oWin, String str) {
+        boolean draw = true;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '_') draw = false;
+        }
+        if (!xWin && !oWin && draw) {
+            System.out.println("Draw");
+        }
+        if (!xWin && !oWin && !draw) {
+            System.out.println("Game not finished");
+        }
+    }
+
+    public static boolean checkHorizontal(char ch, String[] line, boolean current) {
+        for (int i = 0; i < 3; i++) {
+            if ((line[0].charAt(i) == ch && line[1].charAt(i) == ch && line[2].charAt(i) == ch) || current)
+                return true;
+            }
+        return false;
+    }
+
+    public static boolean checkDioganal(char ch, String[] line) {
+        if (line[0].charAt(0) == ch && line[1].charAt(1) == ch && line[2].charAt(2) == ch)
+            return true;
+        if (line[0].charAt(2) == ch && line[1].charAt(1) == ch && line[2].charAt(0) == ch)
+            return true;
+        return false;
+    }
+
+    public static boolean check4Impossible(String line, boolean xWin, boolean oWin) {
         int x = 0, o = 0;
         for (int i = 0; i < line.length(); i++) {
             if (line.charAt(i) == 'X') {
@@ -58,6 +99,9 @@ public class Main {
                 o++;
             }
         }
-        if (Math.abs(x - o) > 1) System.out.println("Impossible");
+        if ((Math.abs(x - o) > 1) || (xWin && oWin)) {
+            return false;
+        }
+        return true;
     }
 }

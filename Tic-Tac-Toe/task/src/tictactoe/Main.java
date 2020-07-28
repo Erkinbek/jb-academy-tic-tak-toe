@@ -5,9 +5,42 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
+        boolean trueCoordinate = false;
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter cells: ");
         String str = scanner.nextLine();
+
+        String[] lines = changeItem(str, scanner);
+
+        drawTable(lines);
+//        checkWins(lines, str);
+    }
+
+    public static String[] changeItem(String str, Scanner scanner) {
+        System.out.print("Enter the coordinates: ");
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+
+        if (n > 3 || m > 3) {
+            System.out.println("Coordinates should be from 1 to 3!");
+            changeItem(str, scanner);
+        }
+
         String[] lines = {str.substring(0,3), str.substring(3,6), str.substring(6,9)};
+
+        char ch = lines[n].charAt(m);
+        if (ch == '_') {
+            char[] chars =lines[n].toCharArray();
+            chars[m] = 'X';
+            lines[n] = new String(chars);
+        }
+        return lines;
+    }
+
+    public static void drawTable(String[] lines)
+    {
         System.out.print("---------\n");
         for (int i = 0; i < 3; i++) {
             System.out.print("| ");
@@ -19,8 +52,6 @@ public class Main {
             System.out.print("\n");
         }
         System.out.println("---------");
-
-        checkWins(lines, str);
     }
 
 

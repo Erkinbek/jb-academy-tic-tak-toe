@@ -19,6 +19,15 @@ class Main {
                 if (matrix[i][j] != matrix[j][i]) res = false;
             }
         }
+
+//        int tempIndex = n -1;
+//        a = matrix[0][tempIndex];
+//        for(int i = 0; i < n; i++) {
+//            if (a != matrix[i][tempIndex]) {
+//                res = false;
+//            }
+//            tempIndex--;
+//        }
         System.out.println(res ? "YES" : "NO");
     }
 }

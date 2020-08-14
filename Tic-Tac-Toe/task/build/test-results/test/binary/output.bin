@@ -1,10 +1,557 @@
 [1;31m
 Start test 1[0m
-Enter cells: > _XXOO_OX_
-Enter the coordinates: > 1 1
-
----------
-| _ X X |
-| O O _ |
-| O X _ |
 	---------
+|       |
+|       |
+|       |
+	---------
+Enter coordinates: 
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+	---------
+|       |
+|       |
+| X     |
+	---------
+Enter coordinates: 
+> 3 2
+	---------
+|       |
+|     Y |
+| X     |
+	---------
+Enter coordinates: 
+> 2 1
+	---------
+|       |
+|     Y |
+| X X   |
+	---------
+Enter coordinates: 
+> 4 2
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 2 4
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+	---------
+|       |
+| Y   Y |
+| X X   |
+	---------
+Enter coordinates: 
+> 1 3
+	---------
+| X     |
+| Y   Y |
+| X X   |
+	---------
+Enter coordinates: 
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+	---------
+| X     |
+| Y Y Y |
+| X X   |
+	---------
+Enter coordinates: 
+> 2 3
+	---------
+| X X   |
+| Y Y Y |
+| X X   |
+	---------
+Enter coordinates: 
+> 3 1
+	---------
+| X X   |
+| Y Y Y |
+| X X Y |
+	---------
+Enter coordinates: 
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+	---------
+| X X X |
+| Y Y Y |
+| X X Y |
+	---------
+Enter coordinates: 
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 2
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 2 4
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 2
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 2 4
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 2
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 2 4
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 2
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 2 4
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 2
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 2 4
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 2
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 2 4
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 2
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 2 4
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 2
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 4 3
+"Coordinates should be from 1 to 3!
+> 1 1
+*This cell is occupied! Choose another one!
+> 2 4
+"Coordinates should be from 1 to 3!
+> 2 1
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!
+> 1 1
+*This cell is occupied! Choose another one!
+> 1 2
+*This cell is occupied! Choose another one!
+> 1 3
+*This cell is occupied! Choose another one!
+> 2 1
+*This cell is occupied! Choose another one!
+> 2 2
+*This cell is occupied! Choose another one!
+> 2 3
+*This cell is occupied! Choose another one!
+> 3 1
+*This cell is occupied! Choose another one!
+> 3 2
+*This cell is occupied! Choose another one!
+> 3 3
+*This cell is occupied! Choose another one!

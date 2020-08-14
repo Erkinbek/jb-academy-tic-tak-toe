@@ -1,138 +1,139 @@
 package tictactoe;
-
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
+    static char[][] board = new char[3][3];
+    static int Xcord, Ycord;
+    static boolean winner = false;
+    static boolean xQueue = true;
 
     public static void main(String[] args) {
-
-        boolean trueCoordinate = false;
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter cells: ");
-        String str = scanner.nextLine();
-
-        String[] lines = changeItem(str, scanner);
-
-        drawTable(lines);
-//        checkWins(lines, str);
+        getInput();
+        drawTable(board);
+        game();
     }
 
-    public static String[] changeItem(String str, Scanner scanner) {
-        System.out.print("Enter the coordinates: ");
-        int n = scanner.nextInt();
-        int m = scanner.nextInt();
-
-        if (n > 3 || m > 3) {
-            System.out.println("Coordinates should be from 1 to 3!");
-            changeItem(str, scanner);
-        }
-
-        String[] lines = {str.substring(0,3), str.substring(3,6), str.substring(6,9)};
-
-        char ch = lines[n].charAt(m);
-        if (ch == '_') {
-            char[] chars =lines[n].toCharArray();
-            chars[m] = 'X';
-            lines[n] = new String(chars);
-        }
-        return lines;
-    }
-
-    public static void drawTable(String[] lines)
+    public static void game()
     {
-        System.out.print("---------\n");
+        getCoordinates();
+        drawTable(board);
+        checkWins(board);
+        if (!winner) {
+            game();
+        }
+    }
+
+    public static void checkWins(char[][] board)
+    {
+        boolean x = checkWinner('X');
+        boolean y = checkWinner('Y');
+        if (x) {
+            System.out.println("X wins");
+            winner = true;
+        }
+        if (y) {
+            System.out.println("Y wins");
+            winner = true;
+        }
+
+    }
+
+    public static boolean checkWinner(char ch) {
+        boolean temp = true;
         for (int i = 0; i < 3; i++) {
-            System.out.print("| ");
-            for (int j = 0; j < 3; j++) {
-                System.out.print(lines[i].charAt(j));
-                if (j != 2) System.out.print(" ");
+            if (board[i][0] == ch && temp) {
+                temp = true;
+            } else {
+                temp = false;
             }
-            System.out.print(" |");
-            System.out.print("\n");
+        }
+        return temp;
+    }
+
+    static void getInput(){ // gets matrix input from user as String
+        String cells = "         ";
+        fillTable(board, cells);
+    }
+
+    static void getCoordinates(){ // gets coordinates and checks whether it satisfies specific conditions
+        System.out.println("Enter coordinates: ");
+        while(true){
+
+            Xcord = scanner.nextInt();
+            Ycord = scanner.nextInt();
+
+            if(Xcord > 3 || Xcord < 1 || Ycord > 3 || Ycord < 1){
+                System.out.println("Coordinates should be from 1 to 3!");
+            } else {
+                ninetyRight(board);
+                if(isEmpty(board, Xcord, Ycord)){
+                    fillValue(board, xQueue ? 'X' : 'Y', Xcord, Ycord);
+                    ninetyLeft(board);
+                    xQueue = !xQueue;
+                    break;
+                } else {
+                    System.out.println("This cell is occupied! Choose another one!");
+                }
+                ninetyLeft(board);
+            }
+        }
+    }
+
+    static void drawTable(char[][] arr){    // draws matrix as a table
+        System.out.println("---------");
+        for(int i = 0; i < 3; i++){
+            System.out.print("| ");
+            for(int j = 0; j < 3; j++){
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println("|");
         }
         System.out.println("---------");
     }
 
-
-    public static void checkWins(String[] line, String str)
-    {
-        boolean Xwin = false;
-        boolean Owin = false;
-        boolean impossible = false;
-
-        Xwin = checkDioganal('X', line);
-        Owin = checkDioganal('O', line);
-
-        Xwin = checkHorizontal('X', line, Xwin);
-        Owin = checkHorizontal('O', line, Owin);
-
-        // gorizontal bo'yicha
-        for (int i = 0; i < 3; i++) {
-            if (line[i].equals("OOO")){
-                Owin = true;
-            }
-            if (line[i].equals("XXX")){
-                Xwin = true;
+    static char[][] fillTable(char[][] arr, String input){ // fills the whole matrix by the String put by user
+        int counter = 0;
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                arr[i][j] = input.charAt(counter);
+                counter++;
             }
         }
-
-        if (!check4Impossible(str, Xwin, Owin))
-            System.out.println("Impossible");
-        else  {
-            if (Xwin) {
-                System.out.println("X wins");
-            }
-            if (Owin) {
-                System.out.println("O wins");
-            }
-            Draw(Xwin, Owin, str);
-        }
-
+        return arr;
     }
 
-    public static void Draw(boolean xWin, boolean oWin, String str) {
-        boolean draw = true;
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '_') draw = false;
-        }
-        if (!xWin && !oWin && draw) {
-            System.out.println("Draw");
-        }
-        if (!xWin && !oWin && !draw) {
-            System.out.println("Game not finished");
-        }
+    static char[][] fillValue(char[][] arr, char value, int X, int Y){ // fills matrix with a specific value
+        arr[X-1][Y-1] = value;
+        return arr;
     }
 
-    public static boolean checkHorizontal(char ch, String[] line, boolean current) {
-        for (int i = 0; i < 3; i++) {
-            if ((line[0].charAt(i) == ch && line[1].charAt(i) == ch && line[2].charAt(i) == ch) || current)
-                return true;
-            }
-        return false;
-    }
-
-    public static boolean checkDioganal(char ch, String[] line) {
-        if (line[0].charAt(0) == ch && line[1].charAt(1) == ch && line[2].charAt(2) == ch)
-            return true;
-        if (line[0].charAt(2) == ch && line[1].charAt(1) == ch && line[2].charAt(0) == ch)
-            return true;
-        return false;
-    }
-
-    public static boolean check4Impossible(String line, boolean xWin, boolean oWin) {
-        int x = 0, o = 0;
-        for (int i = 0; i < line.length(); i++) {
-            if (line.charAt(i) == 'X') {
-                x++;
-            }
-            if (line.charAt(i) == 'O') {
-                o++;
+    static char[][] ninetyRight(char[][] arr){ // rotates matrix to 90 degree right
+        char[][] carr = new char[3][3];
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                carr[i][j] = arr[i][j];
             }
         }
-        if ((Math.abs(x - o) > 1) || (xWin && oWin)) {
-            return false;
+
+        int k = 2;
+        for(int i = 0; i < 3; i++){
+            arr[0][i] = carr[k][0];
+            arr[1][i] = carr[k][1];
+            arr[2][i] = carr[k][2];
+            k--;
         }
-        return true;
+        return arr;
+    }
+
+    static char[][] ninetyLeft(char[][] arr){ // rotates matrix to 90 degree left
+        for(int i = 0; i < 3; i++){
+            ninetyRight(arr);
+        }
+        return arr;
+    }
+
+    static boolean isEmpty(char[][] arr, int X, int Y){  // checks whether the chosen coordinates are empty
+        return (arr[X-1][Y-1] == ' ' || arr[X-1][Y-1] == '_');
     }
 }

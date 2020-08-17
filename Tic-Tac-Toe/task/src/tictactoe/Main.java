@@ -27,28 +27,36 @@ public class Main {
     public static void checkWins(char[][] board)
     {
         boolean x = checkWinner('X');
-        boolean y = checkWinner('Y');
+        boolean y = checkWinner('O');
         if (x) {
             System.out.println("X wins");
             winner = true;
         }
         if (y) {
-            System.out.println("Y wins");
+            System.out.println("O wins");
             winner = true;
         }
 
     }
 
     public static boolean checkWinner(char ch) {
-        boolean temp = true;
         for (int i = 0; i < 3; i++) {
-            if (board[i][0] == ch && temp) {
-                temp = true;
-            } else {
-                temp = false;
+            if (board[i][0] == ch && board[i][1] == ch && board[i][2] == ch) {
+                return true;
             }
         }
-        return temp;
+//        for (int i = 0; i < 3; i++) {
+//            if (board[0][i] == ch && board[0][i] == ch && board[0][i] == ch) {
+//                return true;
+//            }
+//        }
+        if (board[0][2] == ch && board[1][1] == ch && board[2][0] == ch) {
+            return true;
+        }
+        if (board[0][0] == ch && board[1][1] == ch && board[2][2] == ch) {
+            return true;
+        }
+        return false;
     }
 
     static void getInput(){ // gets matrix input from user as String
@@ -68,7 +76,7 @@ public class Main {
             } else {
                 ninetyRight(board);
                 if(isEmpty(board, Xcord, Ycord)){
-                    fillValue(board, xQueue ? 'X' : 'Y', Xcord, Ycord);
+                    fillValue(board, xQueue ? 'X' : 'O', Xcord, Ycord);
                     ninetyLeft(board);
                     xQueue = !xQueue;
                     break;
